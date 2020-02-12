@@ -39,3 +39,13 @@ linkCss.rel = "stylesheet";
 linkCss.href= "./styles.css";
 linkCss.className = "css";
 document.querySelector('head').appendChild(linkCss);
+
+header.className = "h1";
+header2.className = "h2";
+para1.className = "para1";
+para2.className = "para2";
+para3.className = "para3";
+para4.className = "para4";
+imgRobin.className = "imgRobin";
+linkRobin.className = "linkRobin";
+

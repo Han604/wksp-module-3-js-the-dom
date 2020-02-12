@@ -64,12 +64,11 @@ JavaScript can modify _all_ of the HTML elements on the page.
 
 There are quite a few options for identifying/targeting elements in the DOM.
 
-- [`.getElementsByTagName()`](https://www.w3schools.com/jsref/met_document_getelementsbytagname.asp)
-- [`.getElementsByClassName()`](https://www.w3schools.com/jsref/met_document_getelementsbyclassname.asp)
+- [`.getElementsByTagName()`](https://www.w3schools.com/jsref/met_document_getelementsbytagname.asp) p tag, div tag
+- [`.getElementsByClassName()`](https://www.w3schools.com/jsref/met_document_getelementsbyclassname.asp) class name
 - [`document.querySelectorAll()`](https://www.w3schools.com/jsref/met_document_queryselectorall.asp)
 
-These queries will return an array-like object of _all_ of the matching elements in the DOM.
-
+These queries will return an "array-like" object of _all_ of the matching elements in the DOM.
 ---
 
 We won't be using these methods very much at all.
@@ -82,12 +81,17 @@ We won't be using these methods very much at all.
 
 Instead, we will use these methods
 
-- [`.getElementById()`](https://www.w3schools.com/jsref/met_document_getelementbyid.asp)
+- [`.getElementById()`](https://www.w3schools.com/jsref/met_document_getelementbyid.asp) only one id per page
 - [`.querySelector()`](https://www.w3schools.com/jsref/met_document_queryselector.asp)
 
 ```js
 // Example
 
+document.getElementById('my-div')
+document.querySelector('body')
+document.querySelector('#mydiv')
+document.querySelector('.my-class')
+document.querySelector('div.bacon > ul')
 ```
 
 ---
@@ -100,12 +104,13 @@ Instead, we will use these methods
 
 You can modify the content of a leaf, an end node with 
 
-- [`.innerText()`](https://www.w3schools.com/jsref/prop_node_innertext.asp)
-- [`.innerHTML()`](https://www.w3schools.com/jsref/prop_html_innerhtml.asp) 
+- [`.innerText`](https://www.w3schools.com/jsref/prop_node_innertext.asp)
+- [`.innerHTML`](https://www.w3schools.com/jsref/prop_html_innerhtml.asp) 
 
 ```js
 // Example
-
+const myTitle = document.getelementById('my-title');
+myTitle.innerText = 'New title';
 ```
 
 ---
@@ -127,7 +132,9 @@ To add a new node to an HTML page, you need to do it in 3 steps.
 
 ```js
 // Example
-
+const paragraph = document.createElement('p');
+paragraph.innerText = "new hacker right here"
+document.querySelector('body').appendChild(paragraph)
 ```
 
 ---
@@ -152,6 +159,7 @@ We can style elements from JavaScript.
 const myDiv = document.getElementById('my-div');
 
 myDiv.style.background = "purple";
+myDiv.style.borderRadius - '23px';
 ```
 
 ⚠️ Houston. We have a problem!
@@ -178,11 +186,11 @@ To modify a `classList`, we have a few methods we can call.
 
 ```js
 // Example
-myDiv.classList.add('primary');
+myDiv.classList.add('primary'); add
 
-myDiv.classList.remove('secondary');
+myDiv.classList.remove('secondary'); remove
 
-myDiv.classList.toggle('active');
+myDiv.classList.toggle('active'); on/off
 ```
 ---
 
