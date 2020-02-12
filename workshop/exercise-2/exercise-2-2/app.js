@@ -17,4 +17,18 @@ const FROGS = 3;
         createLane.appendChild(createSpan);
         const appendLane = document.querySelector(".track");
         appendLane.appendChild(createLane);
+    };
+
+    let racers = [];
+    let tempStable = frogStable;
+
+    for(i = 1; i <= FROGS; i++) {
+        let randomnumber = Math.floor(Math.random() * tempStable.length);
+        while (tempStable[randomnumber] === undefined){
+            randomnumber = Math.floor(Math.random() * tempStable.length);
+        }
+        let newRacer = tempStable[randomnumber];
+        tempStable[randomnumber] = undefined;
+            racers.push(newRacer);    
     }
+    console.log(racers);

@@ -21,7 +21,7 @@ const frogStable = [
     },
     {
         name: 'Fred',
-        color: 'black',
+        color: 'chartreuse',
         number: '8',
     }  
 ]
